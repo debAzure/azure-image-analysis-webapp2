@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis</title>
+    <style>
+        /* Full-size display of images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Image for Analysis</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if analysis_results %}
+    <h2>Analysis Results</h2>
+    <p><strong>Caption:</strong> {{ analysis_results.caption }}</p>
+    <p><strong>Dense Captions:</strong> {{ analysis_results.dense_captions }}</p>
+    <p><strong>Tags:</strong> {{ analysis_results.tags }}</p>
+    <p><strong>Objects:</strong> {{ analysis_results.objects }}</p>
+    <p><strong>People:</strong> {{ analysis_results.people }}</p>
+
+    <h2>Uploaded Image</h2>
+    <img src="{{ url_for('uploaded_file', filename=image_url) }}" alt="Uploaded Image">
+
+    <h2>Annotated Image</h2>
+    <img src="{{ url_for('uploaded_file', filename='annotated_image.jpg') }}" alt="Annotated Image">
+
+    <h2>Background Removed</h2>
+    <img src="{{ url_for('uploaded_file', filename='background_removed.png') }}" alt="Background Removed Image">
+
+    <h2>Foreground Matting</h2>
+    <img src="{{ url_for('uploaded_file', filename='foreground_matted.png') }}" alt="Foreground Matting Image">
+    {% endif %}
+</body>
+</html>
