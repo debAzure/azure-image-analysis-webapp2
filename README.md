@@ -1,0 +1,3 @@
+In this step-by-step tutorial, you’ll learn how to build and deploy an image recognition app using Azure Vision Services and Python. The guide covers setting up Azure Cognitive Services, integrating the Computer Vision API into a Flask web app, and testing it locally. Once the app is working, you’ll deploy it to Azure App Service with GitHub integration for automatic deployment. This guide is ideal for developers looking to create scalable, cloud-based applications powered by Azure’s cutting-edge AI technology, providing users with powerful image analysis capabilities. 
+
+https://www.linkedin.com/posts/debasishdash82_unlock-the-power-of-computer-vision-with-activity-7281536988615254016-AfxW
